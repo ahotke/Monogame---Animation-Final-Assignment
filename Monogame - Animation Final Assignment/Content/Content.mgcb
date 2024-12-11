@@ -25,6 +25,18 @@
 /processorParam:TextureFormat=Color
 /build:1-5182137f.jpg;endScreen.jpg
 
+#begin CustomerPapaLouie_A.webp
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:CustomerPapaLouie_A.webp
+
 #begin giphy-ezgif.com-webp-to-gif-converter.gif
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -36,6 +48,42 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:giphy-ezgif.com-webp-to-gif-converter.gif;Scoop
+
+#begin istockphoto-901501348-612x612-removebg-preview.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:istockphoto-901501348-612x612-removebg-preview.png;pizza.png
+
+#begin Kyle-removebg-preview.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Kyle-removebg-preview.png;Kyle.png
+
+#begin Matt_Neff.webp
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Matt_Neff.webp;Tony.webp
 
 #begin papas-pizzeria-game-banner (1).jpg
 /importer:TextureImporter
@@ -60,4 +108,28 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:pizza-restaurant-interior-italian-cafe-background-vector-51300172.jpg;Pizzeria.jpg
+
+#begin Watermelon_PNG_Clip_Art-2912.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Watermelon_PNG_Clip_Art-2912.png;Watermelon.png
+
+#begin X:/My Drive/Downloads/giphy.webp
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:X:/My Drive/Downloads/giphy.webp;John.webp
 
