@@ -11,6 +11,10 @@ namespace Monogame___Animation_Final_Assignment
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        // TO DO:
+        // - Finish adding sound effects
+        // - Add "click to start" text to intro
+        // - Change window name to something
         enum Screen
         {
             start,
@@ -86,6 +90,16 @@ namespace Monogame___Animation_Final_Assignment
             johnTexture = Content.Load<Texture2D>("John");
             melonTexture = Content.Load<Texture2D>("Watermelon");
             chickenTexture = Content.Load<Texture2D>("Chicken");
+
+            intro = Content.Load<SoundEffect>("netflix");
+            outro = Content.Load<SoundEffect>("victory");
+            yell = Content.Load<SoundEffect>("wilhelm");
+            num = Content.Load<SoundEffect>("numnum");
+
+            introInstance = intro.CreateInstance();
+            outroInstance = outro.CreateInstance();
+            yellInstance = yell.CreateInstance();
+            numInstance = num.CreateInstance();
         }
 
         protected override void Update(GameTime gameTime)

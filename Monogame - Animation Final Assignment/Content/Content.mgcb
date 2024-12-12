@@ -85,6 +85,12 @@
 /processorParam:TextureFormat=Color
 /build:Matt_Neff.webp;Tony.webp
 
+#begin numnum.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:numnum.mp3
+
 #begin papas-pizzeria-game-banner (1).jpg
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -121,6 +127,12 @@
 /processorParam:TextureFormat=Color
 /build:pngtree-kfc-chicken-bucket-a-simple-line-sketch-colors-tikkywow-style-png-image_12783000.png;chicken.png
 
+#begin victory.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:victory.mp3
+
 #begin Watermelon_PNG_Clip_Art-2912.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -133,6 +145,12 @@
 /processorParam:TextureFormat=Color
 /build:Watermelon_PNG_Clip_Art-2912.png;Watermelon.png
 
+#begin wilhelm.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:wilhelm.mp3
+
 #begin X:/My Drive/Downloads/giphy.webp
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -144,4 +162,10 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:X:/My Drive/Downloads/giphy.webp;John.webp
+
+#begin X:/My Drive/Downloads/netflix.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:X:/My Drive/Downloads/netflix.mp3;netflix.mp3
 
