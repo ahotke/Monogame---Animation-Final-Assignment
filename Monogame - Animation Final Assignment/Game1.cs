@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Threading.Tasks;
@@ -22,15 +23,19 @@ namespace Monogame___Animation_Final_Assignment
 
         MouseState mouseState;
 
+        SoundEffect intro, outro, yell, num;
+
+        SoundEffectInstance introInstance, outroInstance, yellInstance, numInstance;
+
         float seconds = 0f;
 
         bool timing = false;
 
-        Texture2D introScreenTexture, mainBgTexture, endScreenTexture, papaTexture, kyleTexture, tonyTexture, johnTexture, pizzaTexture, watermelonTexture;
+        Texture2D introScreenTexture, mainBgTexture, endScreenTexture, papaTexture, kyleTexture, tonyTexture, johnTexture, pizzaTexture, melonTexture, chickenTexture;
 
-        Rectangle backgroundRect, papaRect, kyleRect, tonyRect, johnRect, pizzaRect, watermelonRect;
+        Rectangle backgroundRect, papaRect, kyleRect, tonyRect, johnRect, pizzaRect, melonRect, chickenRect;
 
-        Vector2 pizzaSpeed, johnSpeed;
+        Vector2 pizzaSpeed, melonSpeed, johnSpeed, chickenSpeed;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -58,13 +63,17 @@ namespace Monogame___Animation_Final_Assignment
 
             johnSpeed = new Vector2(0, 0);
             pizzaSpeed = new Vector2(0, 0);
+            melonSpeed = new Vector2(0, 0);
+            chickenSpeed = new Vector2(0, 0);
 
             backgroundRect = new Rectangle(0, 0, 800, 500);
             johnRect = new Rectangle(800, 300, 180, 190);
-            papaRect = new Rectangle(0, 0, 140, 170);
+            papaRect = new Rectangle(600, 270, 140, 230);
             kyleRect = new Rectangle(180, 290, 200, 210);
             tonyRect = new Rectangle(0, 300, 130, 190);
             pizzaRect = new Rectangle(240, 400, 80, 80);
+            melonRect = new Rectangle(590, 350, 80, 80);
+            chickenRect = new Rectangle(620, -20, 120, 120);
             
 
             introScreenTexture = Content.Load<Texture2D>("introScreen");
@@ -75,6 +84,8 @@ namespace Monogame___Animation_Final_Assignment
             kyleTexture = Content.Load<Texture2D>("Kyle");
             tonyTexture = Content.Load<Texture2D>("Tony");
             johnTexture = Content.Load<Texture2D>("John");
+            melonTexture = Content.Load<Texture2D>("Watermelon");
+            chickenTexture = Content.Load<Texture2D>("Chicken");
         }
 
         protected override void Update(GameTime gameTime)
@@ -101,7 +112,7 @@ namespace Monogame___Animation_Final_Assignment
             {
                 seconds += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-                if (seconds >= 18)
+                if (seconds >= 19)
                 {
                     screen = Screen.end;
                     timing = false;
@@ -170,11 +181,40 @@ namespace Monogame___Animation_Final_Assignment
                     //_spriteBatch.Draw(papaTexture, papaRect, Color.White);
                     
                 }
+
+                if (seconds >= 11)
+                {
+                    _spriteBatch.Draw(melonTexture, melonRect, Color.White);
+                    if (melonRect.X >= 265)
+                    {
+                        melonSpeed = new Vector2(-5, -1);
+                        melonRect.X += (int)melonSpeed.X;
+                        melonRect.Y += (int)melonSpeed.Y;
+                    }
+
+                    if (melonRect.X <= 265 && melonRect.Y != 430)
+                    {
+                        melonSpeed = new Vector2(0, 2);
+                        melonRect.Y += (int)melonSpeed.Y;
+                    }
+                }
+
+                if(seconds >= 14)
+                {
+                    _spriteBatch.Draw(chickenTexture, chickenRect, Color.White);
+                    if (chickenRect.Y < 300)
+                    {
+                        chickenSpeed = new Vector2(0, 2);
+                        chickenRect.Y += (int)chickenSpeed.Y;
+                    }
+                }
             }
 
             if (screen == Screen.end)
             {
                 _spriteBatch.Draw(endScreenTexture, backgroundRect, Color.White);
+
+                _spriteBatch.Draw(papaTexture, papaRect, Color.White);
             }
 
             

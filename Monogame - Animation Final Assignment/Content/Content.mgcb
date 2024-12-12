@@ -109,6 +109,18 @@
 /processorParam:TextureFormat=Color
 /build:pizza-restaurant-interior-italian-cafe-background-vector-51300172.jpg;Pizzeria.jpg
 
+#begin pngtree-kfc-chicken-bucket-a-simple-line-sketch-colors-tikkywow-style-png-image_12783000.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:pngtree-kfc-chicken-bucket-a-simple-line-sketch-colors-tikkywow-style-png-image_12783000.png;chicken.png
+
 #begin Watermelon_PNG_Clip_Art-2912.png
 /importer:TextureImporter
 /processor:TextureProcessor
