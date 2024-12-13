@@ -27,13 +27,15 @@ namespace Monogame___Animation_Final_Assignment
 
         MouseState mouseState;
 
+        SpriteFont playFont;
+
         SoundEffect intro, outro, yell, num;
 
         SoundEffectInstance introInstance, outroInstance, yellInstance, numInstance;
 
         float seconds = 0f;
 
-        bool timing = false;
+        bool timing = false, numnum = false;
 
         Texture2D introScreenTexture, mainBgTexture, endScreenTexture, papaTexture, kyleTexture, tonyTexture, johnTexture, pizzaTexture, melonTexture, chickenTexture;
 
@@ -78,7 +80,8 @@ namespace Monogame___Animation_Final_Assignment
             pizzaRect = new Rectangle(240, 400, 80, 80);
             melonRect = new Rectangle(590, 350, 80, 80);
             chickenRect = new Rectangle(620, -20, 120, 120);
-            
+
+            playFont = Content.Load<SpriteFont>("IntroFont");
 
             introScreenTexture = Content.Load<Texture2D>("introScreen");
             mainBgTexture = Content.Load<Texture2D>("Pizzeria");
@@ -97,6 +100,7 @@ namespace Monogame___Animation_Final_Assignment
             num = Content.Load<SoundEffect>("numnum");
 
             introInstance = intro.CreateInstance();
+            introInstance.Volume = 1f;
             outroInstance = outro.CreateInstance();
             yellInstance = yell.CreateInstance();
             numInstance = num.CreateInstance();
@@ -115,22 +119,78 @@ namespace Monogame___Animation_Final_Assignment
 
             if (screen == Screen.start)
             {
+                
                 if (mouseState.LeftButton == ButtonState.Pressed)
                 {
                     screen = Screen.main;
                     timing = true;
+                    introInstance.Play();
                 }
             }
 
             if (screen == Screen.main)
             {
+
                 seconds += (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+                if (seconds >= 5)
+                {
+                    if (pizzaRect.X != tonyRect.Right - 100)
+                    {
+                        yellInstance.Play();
+                        pizzaSpeed = new Vector2(-2, -1);
+                        pizzaRect.X += (int)pizzaSpeed.X;
+                        pizzaRect.Y += (int)pizzaSpeed.Y;
+                    }
+
+                }
+
+                if (seconds >= 11)
+                {
+
+                    if (melonRect.X >= 265)
+                    {
+                        melonSpeed = new Vector2(-5, -1);
+                        melonRect.X += (int)melonSpeed.X;
+                        melonRect.Y += (int)melonSpeed.Y;
+                    }
+
+                    if (melonRect.X <= 265 && melonRect.Y != 430)
+                    {
+                        melonSpeed = new Vector2(0, 2);
+                        melonRect.Y += (int)melonSpeed.Y;
+                    }
+                }
+
+                if (johnRect.X > 600)
+                {
+                    johnSpeed = new Vector2(-3, 0);
+                    johnRect.X += (int)johnSpeed.X;
+                }
+
+                if (seconds >= 14)
+                {
+
+                    if (chickenRect.Y < 300)
+                    {
+                        chickenSpeed = new Vector2(0, 2);
+                        chickenRect.Y += (int)chickenSpeed.Y;
+                    }
+
+                }
+
+                if (seconds >= 17)
+                {
+                    numInstance.Play();
+                }
 
                 if (seconds >= 19)
                 {
+                   
                     screen = Screen.end;
                     timing = false;
                     seconds = 0;
+                    outroInstance.Play();
                 }
 
             }
@@ -143,6 +203,8 @@ namespace Monogame___Animation_Final_Assignment
                 {
                     Exit();
                 }
+
+               
             }
 
             base.Update(gameTime);
@@ -159,6 +221,7 @@ namespace Monogame___Animation_Final_Assignment
             if (screen == Screen.start)
             {
                 _spriteBatch.Draw(introScreenTexture, backgroundRect, Color.White);
+                _spriteBatch.DrawString(playFont, "Click to play!", new Vector2 (410, 400), Color.Black);
             }
             if (screen == Screen.main)
             {
@@ -172,62 +235,29 @@ namespace Monogame___Animation_Final_Assignment
                     _spriteBatch.Draw(pizzaTexture, pizzaRect, Color.White);
                 }
 
-                if (seconds >= 5)
-                {
-                    if (pizzaRect.X != tonyRect.Right - 100)
-                    {
-                        pizzaSpeed = new Vector2(-2, -1);
-                        pizzaRect.X += (int)pizzaSpeed.X;
-                        pizzaRect.Y += (int)pizzaSpeed.Y;
-                    }
-
-                }
+               
 
                 if (seconds >= 8)
                 {
                     _spriteBatch.Draw(johnTexture, johnRect, Color.White);
-                    if (johnRect.X > 600)
-                    {
-                        johnSpeed = new Vector2(-3, 0);
-                        johnRect.X += (int)johnSpeed.X;
-                    }
-
-                    //_spriteBatch.Draw(papaTexture, papaRect, Color.White);
                     
                 }
 
                 if (seconds >= 11)
                 {
                     _spriteBatch.Draw(melonTexture, melonRect, Color.White);
-                    if (melonRect.X >= 265)
-                    {
-                        melonSpeed = new Vector2(-5, -1);
-                        melonRect.X += (int)melonSpeed.X;
-                        melonRect.Y += (int)melonSpeed.Y;
-                    }
-
-                    if (melonRect.X <= 265 && melonRect.Y != 430)
-                    {
-                        melonSpeed = new Vector2(0, 2);
-                        melonRect.Y += (int)melonSpeed.Y;
-                    }
                 }
-
+                
                 if(seconds >= 14)
                 {
                     _spriteBatch.Draw(chickenTexture, chickenRect, Color.White);
-                    if (chickenRect.Y < 300)
-                    {
-                        chickenSpeed = new Vector2(0, 2);
-                        chickenRect.Y += (int)chickenSpeed.Y;
-                    }
                 }
+
             }
 
             if (screen == Screen.end)
             {
                 _spriteBatch.Draw(endScreenTexture, backgroundRect, Color.White);
-
                 _spriteBatch.Draw(papaTexture, papaRect, Color.White);
             }
 

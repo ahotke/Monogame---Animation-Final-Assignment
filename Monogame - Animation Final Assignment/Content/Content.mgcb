@@ -49,6 +49,13 @@
 /processorParam:TextureFormat=Color
 /build:giphy-ezgif.com-webp-to-gif-converter.gif;Scoop
 
+#begin IntroFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:IntroFont.spritefont
+
 #begin istockphoto-901501348-612x612-removebg-preview.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -85,11 +92,17 @@
 /processorParam:TextureFormat=Color
 /build:Matt_Neff.webp;Tony.webp
 
-#begin numnum.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
+#begin netflix.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:numnum.mp3
+/build:netflix.wav
+
+#begin numnum.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:numnum.wav
 
 #begin papas-pizzeria-game-banner (1).jpg
 /importer:TextureImporter
@@ -127,11 +140,14 @@
 /processorParam:TextureFormat=Color
 /build:pngtree-kfc-chicken-bucket-a-simple-line-sketch-colors-tikkywow-style-png-image_12783000.png;chicken.png
 
-#begin victory.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
+#begin soria.ttf
+/copy:soria.ttf
+
+#begin victory.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:victory.mp3
+/build:victory.wav
 
 #begin Watermelon_PNG_Clip_Art-2912.png
 /importer:TextureImporter
@@ -145,11 +161,11 @@
 /processorParam:TextureFormat=Color
 /build:Watermelon_PNG_Clip_Art-2912.png;Watermelon.png
 
-#begin wilhelm.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
+#begin wilhelm.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:wilhelm.mp3
+/build:wilhelm.wav
 
 #begin X:/My Drive/Downloads/giphy.webp
 /importer:TextureImporter
@@ -162,10 +178,4 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:X:/My Drive/Downloads/giphy.webp;John.webp
-
-#begin X:/My Drive/Downloads/netflix.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:X:/My Drive/Downloads/netflix.mp3;netflix.mp3
 
