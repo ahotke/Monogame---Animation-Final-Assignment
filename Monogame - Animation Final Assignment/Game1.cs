@@ -10,11 +10,6 @@ namespace Monogame___Animation_Final_Assignment
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-
-        // TO DO:
-        // - Finish adding sound effects
-        // - Add "click to start" text to intro
-        // - Change window name to something
         enum Screen
         {
             start,
@@ -52,6 +47,8 @@ namespace Monogame___Animation_Final_Assignment
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+
+            this.Window.Title = "The Food Fight";
 
             _graphics.PreferredBackBufferWidth = 800;
             _graphics.PreferredBackBufferHeight = 500;
@@ -113,8 +110,6 @@ namespace Monogame___Animation_Final_Assignment
 
             // TODO: Add your update logic here
 
-            this.Window.Title = $"x = {mouseState.X}, y = {mouseState.Y}" + "     " + seconds;
-            // this.Window.Title = "The Food Fight";
             mouseState = Mouse.GetState();
 
             if (screen == Screen.start)
